@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0b0b0b;
+  color: #f8f5f0;
+  font-family: "Jost", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #d4a017;
+  color: #0b0b0b;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a017, #946c0c);
+  border-radius: 10px;
+}
+
+@layer components {
+  .container-luxe {
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-luxe text-gold;
+  }
+  .heading-serif {
+    @apply font-serif font-light leading-[0.95] tracking-tight text-ivory;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-grad px-7 py-3.5 text-sm font-medium uppercase tracking-wide2 text-ink-black transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ivory/25 px-7 py-3.5 text-sm font-medium uppercase tracking-wide2 text-ivory transition-all duration-300 hover:border-gold hover:text-gold;
+  }
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #e3bd4e 0%, #d4a017 50%, #946c0c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #946c0c 0%, #e3bd4e 50%, #946c0c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Swiper pagination — gold theme */
+.swiper-pagination-bullet {
+  background: #f8f5f0 !important;
+  opacity: 0.3 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #d4a017 !important;
+  opacity: 1 !important;
+  width: 22px !important;
+  border-radius: 9999px !important;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
