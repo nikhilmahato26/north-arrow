@@ -4,30 +4,16 @@ import { motion } from "framer-motion";
 export default function Logo({ className = "", showText = true, size = 40 }) {
   return (
     <a href="#home" className={`group flex items-center gap-3 ${className}`}>
-      <motion.svg
+      <motion.img
+        src="/logo.jpeg"
+        alt="North Arrow Interiors"
         width={size}
         height={size}
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        style={{ width: size, height: size }}
         whileHover={{ rotate: 12 }}
         transition={{ type: "spring", stiffness: 200, damping: 12 }}
-        className="shrink-0"
-      >
-        <rect
-          x="1.5"
-          y="1.5"
-          width="61"
-          height="61"
-          rx="14"
-          stroke="#D4A017"
-          strokeOpacity="0.55"
-          strokeWidth="1.5"
-        />
-        <path d="M32 12 L46 42 L32 34 L18 42 Z" fill="#D4A017" />
-        <path d="M32 12 L32 34 L18 42 Z" fill="#B8890F" />
-        <circle cx="32" cy="50" r="2.4" fill="#D4A017" />
-      </motion.svg>
+        className="shrink-0 rounded-xl object-cover"
+      />
       {showText && (
         <span className="flex flex-col leading-none">
           <span className="font-serif text-xl tracking-wide text-ivory">
