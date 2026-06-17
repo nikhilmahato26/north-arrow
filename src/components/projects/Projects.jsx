@@ -17,7 +17,7 @@ export default function Projects() {
     active === "Projects" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="relative bg-ink-charcoal py-24 sm:py-28">
+    <section id="projects" className="relative bg-ink-black py-24 sm:py-28">
       <div className="container-luxe">
         <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading

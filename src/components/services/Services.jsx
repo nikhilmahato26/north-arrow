@@ -6,7 +6,7 @@ import { staggerContainer, viewportOnce } from "../../utils/motion";
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-ink-black py-24 sm:py-28">
+    <section id="services" className="relative bg-ink-charcoal py-24 sm:py-28">
       <div className="container-luxe">
         <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
