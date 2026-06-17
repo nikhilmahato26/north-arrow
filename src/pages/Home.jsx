@@ -21,7 +21,7 @@ export default function Home() {
       <Projects />
       <WhyChooseUs />
       <Process />
-      <KitchenShowcase />
+      {/* <KitchenShowcase /> */}
       <Testimonials />
       <Gallery />
       <ConsultationCTA />

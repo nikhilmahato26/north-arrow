@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, ArrowRight, Check, Sparkles } from "lucide-react";
+import { Star, ArrowRight, Check, Sparkles, ArrowDown } from "lucide-react";
 import { brand, heroHighlights } from "../../data/site";
 import { fadeUp, staggerContainer } from "../../utils/motion";
 
@@ -124,14 +124,18 @@ export default function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <motion.div
+      <motion.a
+        href="#services"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-ivory/40 sm:flex"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-ivory/40 hover:text-gold transition-colors sm:flex cursor-pointer"
       >
         <span className="text-[0.6rem] uppercase tracking-luxe">Scroll</span>
-        <span className="h-10 w-px bg-gradient-to-b from-gold to-transparent" />
-      </motion.div>
+        <div className="flex flex-col items-center">
+          <span className="h-10 w-px bg-gradient-to-b from-gold to-transparent" />
+          <ArrowDown size={12} className="text-gold -mt-1" />
+        </div>
+      </motion.a>
     </section>
   );
 }

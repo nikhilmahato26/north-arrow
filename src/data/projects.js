@@ -1,5 +1,5 @@
 export const projectCategories = [
-  "All",
+  "Projects",
   "Modular Kitchens",
   "Living Rooms",
   "Bedrooms",

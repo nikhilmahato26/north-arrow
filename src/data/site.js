@@ -6,6 +6,20 @@ export const brand = {
   phoneDisplay: "+91 90142 70818",
   phoneRaw: "+919014270818",
   whatsapp: "919014270818",
+  whatsappContacts: [
+    {
+      name: "Nandeesh",
+      role: "Design Consultation",
+      phone: "919014270818",
+      avatar: "/avatar-design.png",
+    },
+    {
+      name: "Support Team",
+      role: "Project Updates",
+      phone: "919945595463",
+      avatar: "/avatar-support.png",
+    },
+  ],
   email: "m.nandeesh94@gmail.com",
   location: {
     city: "Hyderabad",
@@ -31,9 +45,10 @@ export const socials = [
 ];
 
 export const heroHighlights = [
-  "100% Customized Designs",
-  "Premium Materials",
-  "End-to-End Execution",
-  "On-Time Delivery",
-  "Transparent Pricing",
+  "Personal Touch in Every Detail",
+  "Designed Around Your Vision",
+  "Passionately Bringing Dreams to Life",
+  "Seamless Design & Execution",
+  "Zero-Compromise After-Sales Support",
+  "Committed to Your Satisfaction"
 ];

@@ -12,9 +12,9 @@ const spanMap = {
 };
 
 export default function Projects() {
-  const [active, setActive] = useState("All");
+  const [active, setActive] = useState("Projects");
   const filtered =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
+    active === "Projects" ? projects : projects.filter((p) => p.category === active);
 
   return (
     <section id="projects" className="relative bg-ink-charcoal py-24 sm:py-28">
@@ -24,7 +24,7 @@ export default function Projects() {
             eyebrow="Featured Work"
             title="Projects That"
             highlight="Tell Stories"
-            intro="A curated showcase of spaces we've transformed across Hyderabad."
+            intro="A curated showcase of spaces we've transformed across South India."
           />
 
           {/* Filters */}
@@ -33,11 +33,10 @@ export default function Projects() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-wide2 transition-all ${
-                  active === cat
+                className={`rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-wide2 transition-all ${active === cat
                     ? "border-gold bg-gold-grad text-ink-black"
                     : "border-white/15 text-ivory/65 hover:border-gold/50 hover:text-ivory"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -60,9 +59,8 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 viewport={viewportOnce}
-                className={`group relative overflow-hidden rounded-2xl border border-white/10 ${
-                  spanMap[project.size] || ""
-                }`}
+                className={`group relative overflow-hidden rounded-2xl border border-white/10 ${spanMap[project.size] || ""
+                  }`}
               >
                 <img
                   src={project.image}

@@ -18,9 +18,9 @@ export default function ServiceCard({ service }) {
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-charcoal via-ink-charcoal/30 to-transparent" />
-        <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold-grad text-ink-black opacity-0 transition-all duration-500 group-hover:opacity-100">
+        {/* <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold-grad text-ink-black opacity-0 transition-all duration-500 group-hover:opacity-100">
           <ArrowUpRight size={18} />
-        </span>
+        </span> */}
       </div>
 
       {/* Body */}

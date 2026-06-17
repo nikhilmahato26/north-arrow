@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 import useScrolled from "../../hooks/useScrolled";
 import { navLinks, brand } from "../../data/site";
@@ -38,10 +38,38 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden items-center gap-4 lg:flex">
-            <a href={`tel:${brand.phoneRaw}`} className="btn-gold !py-2.5 !px-5 text-xs">
-              <Phone size={15} /> {brand.phoneDisplay}
-            </a>
+          {/* Desktop Phone Dropdown */}
+          <div className="relative group hidden lg:block">
+            <button className="btn-gold !py-2.5 !px-5 text-xs flex items-center gap-1.5 cursor-pointer">
+              <Phone size={14} /> Call Us <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
+            </button>
+            <div className="absolute right-0 top-full mt-2 w-56 origin-top-right rounded-xl border border-white/10 bg-ink-charcoal/95 p-2 shadow-2xl backdrop-blur-md opacity-0 invisible scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100 transition-all duration-300 z-50">
+              <a
+                href={`tel:${brand.phoneRaw}`}
+                className="flex items-center gap-2.5 rounded-lg p-2.5 text-xs text-ivory/80 hover:text-ivory hover:bg-white/5 transition-colors"
+              >
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold/10 text-gold shrink-0">
+                  <Phone size={12} />
+                </span>
+                <div className="text-left">
+                  <div className="font-semibold">Design Consultation</div>
+                  <div className="text-[10px] text-ivory/55">{brand.phoneDisplay}</div>
+                </div>
+              </a>
+              <div className="h-px bg-white/10 my-1" />
+              <a
+                href="tel:+919945595463"
+                className="flex items-center gap-2.5 rounded-lg p-2.5 text-xs text-ivory/80 hover:text-ivory hover:bg-white/5 transition-colors"
+              >
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold/10 text-gold shrink-0">
+                  <Phone size={12} />
+                </span>
+                <div className="text-left">
+                  <div className="font-semibold">Support & Projects</div>
+                  <div className="text-[10px] text-ivory/55">+91 99455 95463</div>
+                </div>
+              </a>
+            </div>
           </div>
 
           <button
@@ -63,7 +91,7 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-40 bg-ink-black/95 backdrop-blur-xl lg:hidden"
           >
-            <div className="flex h-full flex-col items-center justify-center gap-8">
+            <div className="flex h-full flex-col items-center justify-center gap-6">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
@@ -77,13 +105,23 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
-              <a
-                href={`tel:${brand.phoneRaw}`}
-                onClick={() => setOpen(false)}
-                className="btn-gold mt-4"
-              >
-                <Phone size={16} /> Call Now
-              </a>
+              
+              <div className="flex flex-col gap-3 mt-4 w-full px-8 max-w-xs">
+                <a
+                  href={`tel:${brand.phoneRaw}`}
+                  onClick={() => setOpen(false)}
+                  className="btn-gold flex items-center justify-center gap-2 w-full text-sm"
+                >
+                  <Phone size={15} /> Call Design
+                </a>
+                <a
+                  href="tel:+919945595463"
+                  onClick={() => setOpen(false)}
+                  className="btn-gold flex items-center justify-center gap-2 w-full text-sm"
+                >
+                  <Phone size={15} /> Call Support
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
