@@ -5,7 +5,7 @@ import { fadeUp, staggerContainer, viewportOnce } from "../../utils/motion";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-ink-black py-24 sm:py-28">
+    <section className="relative overflow-hidden bg-ink-charcoal py-24 sm:py-28">
       {/* Ambient gold glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/5 blur-3xl" />
 
