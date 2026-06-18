@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="flex flex-col gap-5">
           <Logo />
           <p className="max-w-xs text-sm leading-relaxed text-ivory/55">
-            {brand.name} crafts end-to-end luxury interiors across Hyderabad — where{" "}
+            {brand.name} crafts end-to-end luxury interiors across South India — where{" "}
             <span className="text-gold/90 italic">every inch tells a story.</span>
           </p>
           <div className="flex gap-3">
@@ -80,7 +80,20 @@ export default function Footer() {
           <ul className="flex flex-col gap-4 text-sm text-ivory/65">
             <li>
               <a href={`tel:${brand.phoneRaw}`} className="flex items-start gap-3 hover:text-gold">
-                <Phone size={16} className="mt-0.5 text-gold" /> {brand.phoneDisplay}
+                <Phone size={16} className="mt-1 text-gold" />
+                <div>
+                  <span className="block">{brand.phoneDisplay}</span>
+                  <span className="block text-[11px] text-ivory/40">Design Consultation</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href={`tel:${brand.phoneRaw2}`} className="flex items-start gap-3 hover:text-gold">
+                <Phone size={16} className="mt-1 text-gold" />
+                <div>
+                  <span className="block">{brand.phoneDisplay2}</span>
+                  <span className="block text-[11px] text-ivory/40">Support & Project Updates</span>
+                </div>
               </a>
             </li>
             <li>

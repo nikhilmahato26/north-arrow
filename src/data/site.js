@@ -2,16 +2,18 @@
 export const brand = {
   name: "North Arrow Interiors",
   tagline: "Every Inch Tells A Story",
-  badge: "Hyderabad's Premium Interior Studio",
+  badge: "Hyderabad's Premium Interior Designer",
   phoneDisplay: "+91 90142 70818",
   phoneRaw: "+919014270818",
+  phoneDisplay2: "+91 99455 95463",
+  phoneRaw2: "+919945595463",
   whatsapp: "919014270818",
   whatsappContacts: [
     {
       name: "Nandeesh",
       role: "Design Consultation",
       phone: "919014270818",
-      avatar: "/avatar-design.png",
+      avatar: "/avatar-nandeesh.jpg",
     },
     {
       name: "Support Team",
@@ -20,7 +22,7 @@ export const brand = {
       avatar: "/avatar-support.png",
     },
   ],
-  email: "m.nandeesh94@gmail.com",
+  email: "info@northarrowinteriors.com",
   location: {
     city: "Hyderabad",
     state: "Telangana",

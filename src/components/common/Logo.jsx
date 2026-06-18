@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 // North Arrow mark — a compass arrow symbolising growth, direction & transformation.
-export default function Logo({ className = "", showText = true, size = 40 }) {
+export default function Logo({ className = "", showText = true, size = 50 }) {
   return (
     <a href="#home" className={`group flex items-center gap-3 ${className}`}>
       <motion.img
@@ -16,10 +16,10 @@ export default function Logo({ className = "", showText = true, size = 40 }) {
       />
       {showText && (
         <span className="flex flex-col leading-none">
-          <span className="font-serif text-xl tracking-wide text-ivory">
+          <span className="font-serif text-2xl tracking-wide text-ivory">
             North Arrow
           </span>
-          <span className="text-[0.6rem] uppercase tracking-luxe text-gold/80">
+          <span className="text-[0.7rem] uppercase tracking-luxe text-gold/80">
             Interiors
           </span>
         </span>

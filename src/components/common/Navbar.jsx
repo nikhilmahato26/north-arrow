@@ -15,10 +15,10 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        className={`fixed z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-white/10 bg-ink-black/85 py-3 backdrop-blur-xl"
-            : "border-b border-transparent py-5"
+            ? "inset-x-0 top-0 border-b border-white/10 bg-ink-black/85 py-3 backdrop-blur-xl"
+            : "inset-x-4 md:inset-x-6 top-4 md:top-6 max-w-[1400px] mx-auto rounded-2xl border border-white/10 bg-white/[0.02] py-4 backdrop-blur-md"
         }`}
       >
         <nav className="container-luxe flex items-center justify-between">
@@ -58,7 +58,7 @@ export default function Navbar() {
               </a>
               <div className="h-px bg-white/10 my-1" />
               <a
-                href="tel:+919945595463"
+                href={`tel:${brand.phoneRaw2}`}
                 className="flex items-center gap-2.5 rounded-lg p-2.5 text-xs text-ivory/80 hover:text-ivory hover:bg-white/5 transition-colors"
               >
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold/10 text-gold shrink-0">
@@ -66,7 +66,7 @@ export default function Navbar() {
                 </span>
                 <div className="text-left">
                   <div className="font-semibold">Support & Projects</div>
-                  <div className="text-[10px] text-ivory/55">+91 99455 95463</div>
+                  <div className="text-[10px] text-ivory/55">{brand.phoneDisplay2}</div>
                 </div>
               </a>
             </div>
@@ -115,7 +115,7 @@ export default function Navbar() {
                   <Phone size={15} /> Call Design
                 </a>
                 <a
-                  href="tel:+919945595463"
+                  href={`tel:${brand.phoneRaw2}`}
                   onClick={() => setOpen(false)}
                   className="btn-gold flex items-center justify-center gap-2 w-full text-sm"
                 >

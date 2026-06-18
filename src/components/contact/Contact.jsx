@@ -30,7 +30,8 @@ export default function Contact() {
   };
 
   const contactItems = [
-    { icon: Phone, label: "Call Us", value: brand.phoneDisplay, href: `tel:${brand.phoneRaw}` },
+    { icon: Phone, label: "Call Us (Design)", value: brand.phoneDisplay, href: `tel:${brand.phoneRaw}` },
+    { icon: Phone, label: "Call Us (Support)", value: brand.phoneDisplay2, href: `tel:${brand.phoneRaw2}` },
     { icon: Mail, label: "Email Us", value: brand.email, href: `mailto:${brand.email}` },
     {
       icon: MapPin,

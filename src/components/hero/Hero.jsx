@@ -1,24 +1,49 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Star, ArrowRight, Check, Sparkles, ArrowDown } from "lucide-react";
 import { brand, heroHighlights } from "../../data/site";
 import { fadeUp, staggerContainer } from "../../utils/motion";
 
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80",
+  "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=2000&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80",
+  "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=2000&q=80",
+];
+
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink-black pt-28 pb-16"
     >
       {/* Background image + overlays */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
-          alt="Luxury living room interior by North Arrow Interiors"
-          className="h-full w-full object-cover"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-black via-ink-black/90 to-ink-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-black via-transparent to-ink-black/60" />
+      <div className="absolute inset-0 overflow-hidden">
+        <AnimatePresence initial={false} mode="popLayout">
+          <motion.img
+            key={currentIndex}
+            src={HERO_IMAGES[currentIndex]}
+            alt="Luxury interior design by North Arrow Interiors"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+          />
+        </AnimatePresence>
+        {/* Adjusted overlays for clearer visibility while maintaining text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-black/85 via-ink-black/65 to-ink-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-black/85 via-transparent to-ink-black/40" />
       </div>
 
       {/* Decorative floating arrow */}
