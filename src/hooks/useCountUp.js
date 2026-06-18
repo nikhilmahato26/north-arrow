@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from "react";
 // Animates a number from 0 -> target once the element scrolls into view.
 export default function useCountUp(target, duration = 2000) {
   const ref = useRef(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(typeof target === "number" ? 0 : target);
   const hasRun = useRef(false);
 
   useEffect(() => {
+    if (typeof target !== "number") return;
     const node = ref.current;
     if (!node) return;
 
